@@ -1,21 +1,23 @@
-<<<<<<< HEAD
-# ShoppingApp-SprintsUp
-My first Flutter App
-=======
-# shopping_app
+# 🛍️ Shoppy App - Flutter
 
-A new Flutter project.
+A simple shopping UI app built using Flutter, designed as a course final project.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🔐 Sign Up / Sign In pages with validation
+- 🖼️ Welcome screen with image and buttons
+- 🛍️ Product GridView with Add to Cart buttons
+- 🧾 SnackBars and Dialogs
+- 🔁 Page transitions with fade effect
+- 🌍 Arabic & English localization
+- 🎨 Responsive and clean UI
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> c5aa6cd (Initial project upload)
+## 🛠️ Setup Instructions
+
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/ShoppyApp_Flutter.git
