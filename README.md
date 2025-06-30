@@ -13,11 +13,4 @@ A simple shopping UI app built using Flutter, designed as a course final project
 - 🔁 Page transitions with fade effect
 - 🌍 Arabic & English localization
 - 🎨 Responsive and clean UI
-
----
-
-## 🛠️ Setup Instructions
-
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/ShoppyApp_Flutter.git
+ ---
