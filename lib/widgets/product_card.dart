@@ -16,7 +16,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: Colors.purple.shade50,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
@@ -28,22 +28,21 @@ class ProductCard extends StatelessWidget {
             height: 100,
             width: double.infinity,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.network(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
                 imageUrl,
                 fit: BoxFit.cover,
               ),
             ),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.bold),
           ),
 
           IconButton(
-            icon: Icon(Icons.add_shopping_cart),
+            icon: Icon(Icons.add_shopping_cart_outlined),
             onPressed: onAdd,
           ),
         ],

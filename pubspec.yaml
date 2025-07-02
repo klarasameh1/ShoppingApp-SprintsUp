@@ -59,7 +59,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/shopbag.jpg
+     - assets/welcomePage/welcome1.jpg
+     - assets/welcomePage/shopbag.jpg
+     - assets/Panners/Panner1.jpg
+     - assets/Panners/Panner2.jpg
+     - assets/Panners/Panner3.jpg
+     - assets/Products/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -72,9 +78,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: Suwannaphum-Regular
+     - family: Caprasimo-Regular
        fonts:
-         - asset: assets/Suwannaphum-Regular.ttf
+         - asset: assets/Caprasimo-Regular.ttf
 
   #   - family: Trajan Pro
   #     fonts:

@@ -23,129 +23,135 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFB284BE),
+        backgroundColor: Colors.transparent,
         title: Text("Signing Up"),
         centerTitle: true,
       ),
-      body: Form(
-        key: _formKey,
-        child: Column(
-          children: [
-            SizedBox(height: 40),
-            // Optionally keep Name field if you plan to use it
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: nameController,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your name';
-                  }
-                  if (value[0] != value[0].toUpperCase()) {
-                    return 'First letter must be uppercase';
-                  }
-                  username=value ;
-                  return null;
-                },
-                decoration: InputDecoration(labelText: 'Full Name'),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                validator: (value) {
-                  if (value != null && !value.contains("@")) {
-                    return 'Mail not valid';
-                  }
-                  return null;
-                },
-                controller: emailController,
-                decoration: InputDecoration(labelText: "Email"),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                validator: (value) {
-                  if (value != null && value.length < 6) {
-                    return 'Password must contain 6 characters';
-                  }
-                  return null;
-                },
-                controller: passController,
-                obscureText: hidePass,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        hidePass = !hidePass;
-                      });
-                    },
-                    icon: Icon(
-                      hidePass ? Icons.visibility : Icons.visibility_off,
-                    ),
-                  ),
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              SizedBox(height: 60),
+              // Optionally keep Name field if you plan to use it
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  controller: nameController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    if (value[0] != value[0].toUpperCase()) {
+                      return 'First letter must be uppercase';
+                    }
+                    username=value ;
+                    return null;
+                  },
+                  decoration: InputDecoration(labelText: 'Full Name'),
                 ),
               ),
-            ),
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value != passController.text) {
-                    return 'Password do not match ';
-                  }
-                  return null;
-                },
-                controller: confirmPassController,
-                obscureText: hidePass,
-                decoration: InputDecoration(
-                  labelText: "Confirm Password",
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        hidePass = !hidePass;
-                      });
-                    },
-                    icon: Icon(
-                      hidePass ? Icons.visibility : Icons.visibility_off,
-                    ),
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value != null && !value.contains("@")) {
+                      return 'Mail not valid';
+                    }
+                    return null;
+                  },
+                  controller: emailController,
+                  decoration: InputDecoration(labelText: "Email"),
                 ),
               ),
-            ),
 
-            SizedBox(height: 40),
-
-            SizedBox(
-              width: MediaQuery.of(context).size.width*0.8,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    await dialog();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Enter valid data"),
-                        duration: Duration(seconds: 3),
-                        action: SnackBarAction(label: "ok", onPressed: () {}),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value != null && value.length < 6) {
+                      return 'Password must contain 6 characters';
+                    }
+                    return null;
+                  },
+                  controller: passController,
+                  obscureText: hidePass,
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          hidePass = !hidePass;
+                        });
+                      },
+                      icon: Icon(
+                        hidePass ? Icons.visibility : Icons.visibility_off,
                       ),
-                    );
-                  }
-                },
-                child: Text("Sign Up" , style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20 , color: Color(0xFFB284BE)),),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ],
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value != passController.text) {
+                      return 'Password do not match ';
+                    }
+                    return null;
+                  },
+                  controller: confirmPassController,
+                  obscureText: hidePass,
+                  decoration: InputDecoration(
+                    labelText: "Confirm Password",
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          hidePass = !hidePass;
+                        });
+                      },
+                      icon: Icon(
+                        hidePass ? Icons.visibility : Icons.visibility_off,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 60),
+
+              SizedBox(
+                width: MediaQuery.of(context).size.width*0.8,
+                height: 50,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(Color(0xFFA361AE)) ,
+                  ),
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      await dialog();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Enter valid data"),
+                          duration: Duration(seconds: 3),
+                          action: SnackBarAction(label: "Ok", onPressed: () {}),
+                        ),
+                      );
+                    }
+                  },
+                  child: Text("Sign Up" , style: TextStyle(fontSize: 20 , color: Colors.black),),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -156,14 +162,13 @@ class _SignupPageState extends State<SignupPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Color(0xFFB284BE),
-          title: Text("Welcome $username"),
-          titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          title: Text("Welcome"),
+          titleTextStyle: TextStyle(fontSize: 30 , color:Color(0xFFB284BE)),
 
           content: Text("Account created successfully"),
           contentTextStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
+            color: Color(0xFFB284BE),
+            fontSize: 20,
           ),
           actions: <Widget>[
             TextButton(
@@ -174,7 +179,7 @@ class _SignupPageState extends State<SignupPage> {
                 widthFactor: 50,
                 child: Text(
                   "Close",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20 , color: Colors.white),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Color(0xFFB284BE)),
                 ),
               ),
             ),
@@ -184,3 +189,4 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 }
+

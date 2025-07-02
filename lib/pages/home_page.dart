@@ -7,20 +7,24 @@ class HomePage extends StatelessWidget {
 
   final List<Map<String, String>> products = [
     {
-      'title': 'Nail Care',
-      'imageUrl': 'https://images.pexels.com/photos/8714494/pexels-photo-8714494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    },
-    {
       'title': 'Skin Care',
-      'imageUrl': 'https://images.pexels.com/photos/8101531/pexels-photo-8101531.jpeg',
+      'imageUrl': 'assets/Products/product2.jpg',
     },
     {
-      'title': 'Hair Care',
-      'imageUrl': 'https://images.pexels.com/photos/8468162/pexels-photo-8468162.jpeg',
+      'title': 'Body Mist',
+      'imageUrl': 'assets/Products/product3.jpg',
     },
     {
-      'title': 'MakeUp',
-      'imageUrl': 'https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg',
+      'title': 'Serum',
+      'imageUrl': 'assets/Products/product4.jpg',
+    },
+    {
+      'title': 'Skin care Bundle',
+      'imageUrl': 'assets/Products/product5.jpg',
+    },
+    {
+      'title': 'Tonner',
+      'imageUrl': 'assets/Products/product6.jpg',
     }
   ];
 
@@ -38,7 +42,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Our Products"),
         centerTitle: true,
-        backgroundColor: Color(0xFFB284BE),
+        backgroundColor: Colors.transparent
       ),
 
       body: SingleChildScrollView(
@@ -51,10 +55,9 @@ class HomePage extends StatelessWidget {
               height: 200,
               child: PageView(
                 children: [
-                  Image.network('https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg?auto=compress', fit: BoxFit.cover),
-                  Image.network('https://images.pexels.com/photos/5864150/pexels-photo-5864150.jpeg?auto=compress', fit: BoxFit.cover),
-                  Image.network('https://images.pexels.com/photos/5632403/pexels-photo-5632403.jpeg?auto=compress', fit: BoxFit.cover),
-                ],
+                  Image.asset('assets/Panners/Panner1.jpg', fit: BoxFit.cover),
+                  Image.asset('assets/Panners/Panner3.jpg', fit: BoxFit.cover),
+                  Image.asset('assets/Panners/Panner2.jpg', fit: BoxFit.cover),                ],
               ),
             ),
 
@@ -65,7 +68,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 "Popular Products",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                 style: TextStyle(fontSize: 20),
               ),
             ),
 
@@ -88,7 +91,7 @@ class HomePage extends StatelessWidget {
                       imageUrl: products[index]['imageUrl']!,
                       onAdd: () {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('${products[index]['title']} added to cart')),
+                          SnackBar(content: Text('${products[index]['title']} added to cart') , showCloseIcon: true,),
                         );
                       },
                     );
@@ -101,7 +104,7 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 "🔥Hot Offers",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20),
               ),
             ),
 

@@ -11,11 +11,12 @@ class OfferTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
+      width: MediaQuery.of(context).size.width*0.5,
+
       margin: EdgeInsets.symmetric(horizontal: 8),
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Color(0xFFD7C1DD),
+        color: Color(0xFFB284BE),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
@@ -23,7 +24,6 @@ class OfferTile extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              fontWeight: FontWeight.bold,
               fontSize: 18,
               color: Colors.black87,
             ),

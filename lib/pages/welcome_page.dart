@@ -8,21 +8,21 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Welcome to Shoppy App"))),
+      appBar: AppBar(title: Center(child: Text("Welcome to Shoppy App" )) , backgroundColor: Colors.transparent,),
       backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Center(
               child:
-              Image.network('https://img.freepik.com/free-vector/no-time-concept-illustration_114360-4290.jpg?t=st=1751301964~exp=1751305564~hmac=f1358ab224d5296c123608848f31fe5ff7cbfb1472b10bbe63fa2b2904f03639&w=900',
+              Image.asset('assets/welcomePage/welcome1.jpg',
                 width: MediaQuery.of(context).size.width*0.8,
                 height: MediaQuery.of(context).size.height*0.3,
               ),
           ),
           Center(
               child:
-              Image.asset('assets/shopbag.jpg',
+              Image.asset('assets/welcomePage/shopbag.jpg',
                 width: MediaQuery.of(context).size.width*0.8,
                 height: MediaQuery.of(context).size.height*0.3,
               ),
@@ -47,7 +47,7 @@ class WelcomePage extends StatelessWidget {
               onPressed: () => {Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context)=> SigninPage()))},
-              child: Text('Sign In' , style: TextStyle(fontSize: 20 , color: Colors.black),),
+              child: Text('Log In' , style: TextStyle(fontSize: 20 , color: Colors.black ),),
             ),
           ),
         ],
