@@ -44,6 +44,30 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.transparent
       ),
+      drawer: Container(
+        color: Colors.grey.shade100,
+        width: MediaQuery.of(context).size.width*0.6,
+        child: ListView(
+          children: [
+            SizedBox(height: 60),
+            ListTile(
+              title: Text("Contact Us"),
+              trailing: Icon(Icons.contact_mail_outlined),
+            ),
+            ListTile(
+              onTap: (){
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
+
+              },
+              title: Text("Log Out"),
+              trailing: Icon(Icons.logout),
+            ),
+
+          ],
+        ),
+      ) ,
 
       body: SingleChildScrollView(
         child: Column(
@@ -78,7 +102,7 @@ class HomePage extends StatelessWidget {
               child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                itemCount: 4,
+                itemCount: products.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 12,
@@ -103,7 +127,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
-                "🔥Hot Offers",
+                "Hot Offers",
                 style: TextStyle(fontSize: 20),
               ),
             ),
