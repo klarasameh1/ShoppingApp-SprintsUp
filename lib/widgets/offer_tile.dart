@@ -23,6 +23,7 @@ class OfferTile extends StatelessWidget {
         child: Center(
           child: Text(
             label,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18,
               color: Colors.black87,

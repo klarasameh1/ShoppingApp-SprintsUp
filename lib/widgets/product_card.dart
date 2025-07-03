@@ -33,23 +33,28 @@ class ProductCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
                 imageUrl,
+                height: 120,
+                width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
           ),
 
-          SizedBox(height: 10),
+          SizedBox(height: 8),
           Text(
             title,
+            textAlign: TextAlign.center,
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 6),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(price),
-              Icon(Icons.attach_money ,size: 20,),
+              Text(price , style: TextStyle(fontSize: 16),),
+              SizedBox(width: 4),
+              Icon(Icons.attach_money ,size: 18,),
             ],
           ),
+          SizedBox(height: 6),
 
           IconButton(
             icon: Icon(Icons.add_shopping_cart_outlined),

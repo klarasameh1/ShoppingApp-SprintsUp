@@ -11,6 +11,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   String username = '';
   bool hidePass = true;
+  bool hideConfirmPass = true;
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passController = TextEditingController();
@@ -104,17 +105,17 @@ class _SignupPageState extends State<SignupPage> {
                     return null;
                   },
                   controller: confirmPassController,
-                  obscureText: hidePass,
+                  obscureText: hideConfirmPass,
                   decoration: InputDecoration(
                     labelText: "Confirm Password",
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          hidePass = !hidePass;
+                          hideConfirmPass = !hideConfirmPass;
                         });
                       },
                       icon: Icon(
-                        hidePass ? Icons.visibility : Icons.visibility_off,
+                        hideConfirmPass ? Icons.visibility : Icons.visibility_off,
                       ),
                     ),
                   ),
