@@ -40,6 +40,14 @@ class ProductCard extends StatelessWidget {
           Text(
             title,
           ),
+          SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(price),
+              Icon(Icons.attach_money ,size: 20,),
+            ],
+          ),
 
           IconButton(
             icon: Icon(Icons.add_shopping_cart_outlined),
