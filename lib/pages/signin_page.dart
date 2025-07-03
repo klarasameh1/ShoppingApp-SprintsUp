@@ -25,7 +25,7 @@ class _SigninPageState extends State<SigninPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text("Logging In"),
+        title: Text("Log In"),
         centerTitle: true,
       ),
       body: Padding(

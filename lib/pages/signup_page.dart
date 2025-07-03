@@ -24,7 +24,7 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text("Signing Up"),
+        title: Text("Sign Up"),
         centerTitle: true,
       ),
       body: Padding(

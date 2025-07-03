@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import '../widgets/product_card.dart';
 import '../widgets/offer_tile.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> products = [
     {
       'title': 'Skin Care',
@@ -36,6 +41,9 @@ class HomePage extends StatelessWidget {
     "💳 Cashback Deal"
   ];
 
+  bool showContacts = false;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +59,35 @@ class HomePage extends StatelessWidget {
           children: [
             SizedBox(height: 60),
             ListTile(
+              onTap: () {
+                // setState(() {
+                //   showContacts = !showContacts;
+                // });
+              },
+              title: Text("Your Cart"),
+              trailing: Icon(Icons.shopping_cart_outlined),
+            ),
+            ListTile(
+              onTap: () {
+                setState(() {
+                  showContacts = !showContacts;
+                });
+              },
               title: Text("Contact Us"),
               trailing: Icon(Icons.contact_mail_outlined),
             ),
+            if (showContacts) ...[
+              ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("01280285510" , style: TextStyle(fontSize: 18 , color: Colors.black54),),
+              ),
+              ListTile(
+                leading: Icon(Icons.mail_outline),
+                title: Text("klarasameh\n@gmail.com" , style: TextStyle(fontSize:18, color: Colors.black54),),
+              ),
+              SizedBox(height: 40,)
+            ],
+
             ListTile(
               onTap: (){
                 Navigator.of(context).pop();
