@@ -14,22 +14,27 @@ class _HomePageState extends State<HomePage> {
     {
       'title': 'Skin Care',
       'imageUrl': 'assets/Products/product2.jpg',
+      'price':'100',
     },
     {
       'title': 'Body Mist',
       'imageUrl': 'assets/Products/product3.jpg',
+      'price':'100',
     },
     {
       'title': 'Serum',
       'imageUrl': 'assets/Products/product4.jpg',
+      'price':'100',
     },
     {
       'title': 'Skin care Bundle',
       'imageUrl': 'assets/Products/product5.jpg',
+      'price':'100',
     },
     {
       'title': 'Tonner',
       'imageUrl': 'assets/Products/product6.jpg',
+      'price':'100',
     }
   ];
 
@@ -147,6 +152,7 @@ class _HomePageState extends State<HomePage> {
                     return ProductCard(
                       title: products[index]['title']!,
                       imageUrl: products[index]['imageUrl']!,
+                      price: products[index]['price']!,
                       onAdd: () {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('${products[index]['title']} added to cart') , showCloseIcon: true,),

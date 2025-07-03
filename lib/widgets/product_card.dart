@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class ProductCard extends StatelessWidget {
   final String title;
   final String imageUrl;
+  final String price;
   final VoidCallback onAdd;
 
   const ProductCard({
     super.key,
     required this.title,
+    required this.price,
     required this.imageUrl,
     required this.onAdd,
   });
