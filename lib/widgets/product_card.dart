@@ -23,6 +23,7 @@ class ProductCard extends StatelessWidget {
           context: context,
           builder: (BuildContext dialogContext) {
             return AlertDialog(
+              backgroundColor: Colors.grey.shade200,
               // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
               title: Text(title, textAlign: TextAlign.center),
               titleTextStyle: TextStyle(fontSize: 30, color: Color(0xFFB284BE)),
