@@ -12,30 +12,30 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> products = [
     {
-      'title': 'Skin Care',
-      'imageUrl': 'assets/Products/product2.jpg',
-      'price':'100',
+      'title': 'Lavender Face Bundle',
+      'imageUrl': 'assets/Products/product2.png',
+      'price': '100',
     },
     {
-      'title': 'Body Mist',
+      'title': 'Eva Body Mist',
       'imageUrl': 'assets/Products/product3.jpg',
-      'price':'100',
+      'price': '100',
     },
     {
-      'title': 'Serum',
+      'title': 'Hyaluronic Acid Serum',
       'imageUrl': 'assets/Products/product4.jpg',
-      'price':'100',
+      'price': '100',
     },
     {
-      'title': 'Skin care Bundle',
+      'title': 'Hyaluronic Acid Bundle',
       'imageUrl': 'assets/Products/product5.jpg',
-      'price':'100',
+      'price': '100',
     },
     {
       'title': 'Tonner',
       'imageUrl': 'assets/Products/product6.jpg',
-      'price':'100',
-    }
+      'price': '100',
+    },
   ];
 
   final List<String> offers = [
@@ -43,11 +43,10 @@ class _HomePageState extends State<HomePage> {
     "🚚 Free Shipping",
     "🛍️ Buy 1 Get 1",
     "🔥 Sale 50% Off",
-    "💳 Cashback Deal"
+    "💳 Cashback Deal",
   ];
 
   bool showContacts = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,14 +54,25 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Our Products"),
         centerTitle: true,
-        backgroundColor: Colors.transparent
+        backgroundColor: Colors.transparent,
       ),
       drawer: Container(
         color: Colors.grey.shade100,
-        width: MediaQuery.of(context).size.width*0.6,
+        width: MediaQuery.of(context).size.width * 0.6,
         child: ListView(
           children: [
             SizedBox(height: 60),
+            ListTile(
+              onTap: () {
+                setState(() {});
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              title: Text("Home"),
+              trailing: Icon(Icons.home_outlined),
+            ),
             ListTile(
               onTap: () {
                 // setState(() {
@@ -84,35 +94,38 @@ class _HomePageState extends State<HomePage> {
             if (showContacts) ...[
               ListTile(
                 leading: Icon(Icons.phone),
-                title: Text("01280285510" , style: TextStyle(fontSize: 18 , color: Colors.black54),),
+                title: Text(
+                  "01280285510",
+                  style: TextStyle(fontSize: 18, color: Colors.black54),
+                ),
               ),
               ListTile(
                 leading: Icon(Icons.mail_outline),
-                title: Text("klarasameh\n@gmail.com" , style: TextStyle(fontSize:18, color: Colors.black54),),
+                title: Text(
+                  "klarasameh\n@gmail.com",
+                  style: TextStyle(fontSize: 18, color: Colors.black54),
+                ),
               ),
-              SizedBox(height: 40,)
+              SizedBox(height: 40),
             ],
 
             ListTile(
-              onTap: (){
+              onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
-
               },
               title: Text("Log Out"),
               trailing: Icon(Icons.logout),
             ),
-
           ],
         ),
-      ) ,
+      ),
 
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             // 👆 Featured Products Slider
             SizedBox(
               height: 200,
@@ -120,7 +133,8 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Image.asset('assets/Panners/Panner1.jpg', fit: BoxFit.cover),
                   Image.asset('assets/Panners/Panner3.jpg', fit: BoxFit.cover),
-                  Image.asset('assets/Panners/Panner2.jpg', fit: BoxFit.cover),                ],
+                  Image.asset('assets/Panners/Panner2.jpg', fit: BoxFit.cover),
+                ],
               ),
             ),
 
@@ -129,18 +143,14 @@ class _HomePageState extends State<HomePage> {
             // Product Grid Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                "Popular Products",
-                 style: TextStyle(fontSize: 20),
-              ),
+              child: Text("Popular Products", style: TextStyle(fontSize: 20)),
             ),
-
 
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
                 itemCount: products.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -148,28 +158,30 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 12,
                   childAspectRatio: 3 / 4,
                 ),
-                  itemBuilder: (context, index) {
-                    return ProductCard(
-                      title: products[index]['title']!,
-                      imageUrl: products[index]['imageUrl']!,
-                      price: products[index]['price']!,
-                      onAdd: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('${products[index]['title']} added to cart') , showCloseIcon: true,),
-                        );
-                      },
-                    );
-                  }
+                itemBuilder: (context, index) {
+                  return ProductCard(
+                    title: products[index]['title']!,
+                    imageUrl: products[index]['imageUrl']!,
+                    price: products[index]['price']!,
+                    onAdd: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            '${products[index]['title']} added to cart',
+                          ),
+                          showCloseIcon: true,
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             ),
 
             //offers section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                "Hot Offers",
-                style: TextStyle(fontSize: 20),
-              ),
+              child: Text("Hot Offers", style: TextStyle(fontSize: 20)),
             ),
 
             SizedBox(
