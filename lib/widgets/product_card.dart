@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ProductCard extends StatelessWidget {
   final String title;
   final String imageUrl;
-  final String price;
+  final double price;
   final VoidCallback onAdd;
 
   const ProductCard({
@@ -99,9 +99,9 @@ class ProductCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(price, style: TextStyle(fontSize: 16)),
+                Text(price.toString(), style: TextStyle(fontSize: 16)),
                 SizedBox(width: 4),
-                Icon(Icons.attach_money, size: 18),
+                Text("EGB" , style:TextStyle(fontSize: 14,)),
               ],
             ),
             SizedBox(height: 6),

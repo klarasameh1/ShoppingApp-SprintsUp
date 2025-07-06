@@ -8,34 +8,21 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
+class Product {
+  final String title;
+  final String imageUrl;
+  final double price;
+
+  Product({required this.title, required this.imageUrl, required this.price});
+}
 
 class _HomePageState extends State<HomePage> {
-  final List<Map<String, String>> products = [
-    {
-      'title': 'Lavender Face Bundle',
-      'imageUrl': 'assets/Products/product2.png',
-      'price': '100',
-    },
-    {
-      'title': 'Eva Body Mist',
-      'imageUrl': 'assets/Products/product3.jpg',
-      'price': '100',
-    },
-    {
-      'title': 'Hyaluronic Acid Serum',
-      'imageUrl': 'assets/Products/product4.jpg',
-      'price': '100',
-    },
-    {
-      'title': 'Hyaluronic Acid Bundle',
-      'imageUrl': 'assets/Products/product5.jpg',
-      'price': '100',
-    },
-    {
-      'title': 'Tonner',
-      'imageUrl': 'assets/Products/product6.jpg',
-      'price': '100',
-    },
+  final List<Product> products = [
+    Product(title: 'Lavender Face Bundle', imageUrl: 'assets/Products/product2.png', price: 300),
+    Product(title: 'Eva Body Mist', imageUrl: 'assets/Products/product3.jpg', price: 100),
+    Product(title: 'Hyaluronic Acid Serum', imageUrl: 'assets/Products/product4.jpg', price: 120),
+    Product(title: 'Hyaluronic Acid Bundle', imageUrl: 'assets/Products/product5.jpg', price: 100),
+    Product(title: 'Tonner', imageUrl: 'assets/Products/product6.jpg', price: 100),
   ];
 
   final List<String> offers = [
@@ -179,14 +166,14 @@ class _HomePageState extends State<HomePage> {
                 ),
                 itemBuilder: (context, index) {
                   return ProductCard(
-                    title: products[index]['title']!,
-                    imageUrl: products[index]['imageUrl']!,
-                    price: products[index]['price']!,
+                    title: products[index].title,
+                    imageUrl: products[index].imageUrl,
+                    price: products[index].price,
                     onAdd: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                            '${products[index]['title']} added to cart',
+                            '${products[index].title} added to cart',
                           ),
                           showCloseIcon: true,
                         ),
