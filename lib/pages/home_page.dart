@@ -140,6 +140,25 @@ class _HomePageState extends State<HomePage> {
 
             SizedBox(height: 20),
 
+            // offers section
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text("Hot Offers", style: TextStyle(fontSize: 20)),
+            ),
+
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: offers.length,
+                itemBuilder: (context, index) {
+                  return OfferTile(label: offers[index]);
+                },
+              ),
+            ),
+
+            SizedBox(height: 20),
+
             // Product Grid Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -178,23 +197,24 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            //offers section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text("Hot Offers", style: TextStyle(fontSize: 20)),
-            ),
 
-            SizedBox(
-              height: 100,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: offers.length,
-                itemBuilder: (context, index) {
-                  return OfferTile(label: offers[index]);
-                },
+
+            Center(
+              child: SizedBox(
+                child:Column(
+                  children: [
+                    Icon(Icons.circle_sharp , size: 10, color: Colors.grey.shade700,),
+                    SizedBox(height: 10,),
+                    Text("Stay tuned for More",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontSize: 18
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-
             SizedBox(height: 20),
           ],
         ),

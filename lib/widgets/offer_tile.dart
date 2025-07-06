@@ -16,7 +16,7 @@ class OfferTile extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 8),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Color(0xFFB284BE),
+        color: Colors.purple.shade50,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
