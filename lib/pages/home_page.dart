@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/pages/shopping_cart.dart';
 import '../widgets/product_card.dart';
 import '../widgets/offer_tile.dart';
 
@@ -16,13 +17,30 @@ class Product {
   Product({required this.title, required this.imageUrl, required this.price});
 }
 
+class CartItem {
+  Product product;
+  int quantity;
+
+  CartItem({required this.product, this.quantity = 1});
+}
+final List<CartItem> cartList = [];
+
 class _HomePageState extends State<HomePage> {
   final List<Product> products = [
-    Product(title: 'Lavender Face Bundle', imageUrl: 'assets/Products/product2.png', price: 300),
-    Product(title: 'Eva Body Mist', imageUrl: 'assets/Products/product3.jpg', price: 100),
-    Product(title: 'Hyaluronic Acid Serum', imageUrl: 'assets/Products/product4.jpg', price: 120),
-    Product(title: 'Hyaluronic Acid Bundle', imageUrl: 'assets/Products/product5.jpg', price: 100),
-    Product(title: 'Tonner', imageUrl: 'assets/Products/product6.jpg', price: 100),
+    Product(title: 'Lavender Face Bundle',
+        imageUrl: 'assets/Products/product2.png',
+        price: 300),
+    Product(title: 'Eva Body Mist',
+        imageUrl: 'assets/Products/product3.jpg',
+        price: 100),
+    Product(title: 'Hyaluronic Acid Serum',
+        imageUrl: 'assets/Products/product4.jpg',
+        price: 120),
+    Product(title: 'Hyaluronic Acid Bundle',
+        imageUrl: 'assets/Products/product5.jpg',
+        price: 100),
+    Product(
+        title: 'Tonner', imageUrl: 'assets/Products/product6.jpg', price: 100),
   ];
 
   final List<String> offers = [
@@ -45,7 +63,10 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Container(
         color: Colors.grey.shade100,
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery
+            .of(context)
+            .size
+            .width * 0.6,
         child: ListView(
           children: [
             SizedBox(height: 60),
@@ -62,9 +83,14 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               onTap: () {
-                // setState(() {
-                //   showContacts = !showContacts;
-                // });
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ShoppingCart(),
+                    ),
+                  );
+                });
               },
               title: Text("Your Cart"),
               trailing: Icon(Icons.shopping_cart_outlined),
@@ -170,14 +196,9 @@ class _HomePageState extends State<HomePage> {
                     imageUrl: products[index].imageUrl,
                     price: products[index].price,
                     onAdd: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            '${products[index].title} added to cart',
-                          ),
-                          showCloseIcon: true,
-                        ),
-                      );
+                      setState(() {
+                        addToCart(products[index]);
+                      });
                     },
                   );
                 },
@@ -185,17 +206,17 @@ class _HomePageState extends State<HomePage> {
             ),
 
 
-
             Center(
               child: SizedBox(
-                child:Column(
+                child: Column(
                   children: [
-                    Icon(Icons.circle_sharp , size: 10, color: Colors.grey.shade700,),
+                    Icon(Icons.circle_sharp, size: 10,
+                      color: Colors.grey.shade700,),
                     SizedBox(height: 10,),
                     Text("Stay tuned for More",
                       style: TextStyle(
-                        fontWeight: FontWeight.w200,
-                        fontSize: 18
+                          fontWeight: FontWeight.w200,
+                          fontSize: 18
                       ),
                     ),
                   ],
@@ -205,6 +226,27 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
           ],
         ),
+      ),
+    );
+  }
+
+  void addToCart(Product product) {
+    final index = cartList.indexWhere((item) =>
+    item.product.title == product.title);
+    setState(() {
+      if (index != -1) {
+        //Just increase quantity
+        cartList[index].quantity++;
+      } else {
+        // Add new item
+        cartList.add(CartItem(product: product));
+      }
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Center(child: Text("${product.title} added to cart")),
+        duration: Duration(seconds: 1),
       ),
     );
   }

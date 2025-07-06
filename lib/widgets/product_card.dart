@@ -6,6 +6,7 @@ class ProductCard extends StatelessWidget {
   final String imageUrl;
   final double price;
   final VoidCallback onAdd;
+  final bool showCartIcon;
 
   const ProductCard({
     super.key,
@@ -13,6 +14,7 @@ class ProductCard extends StatelessWidget {
     required this.price,
     required this.imageUrl,
     required this.onAdd,
+    this.showCartIcon = true, // default to true
   });
 
   @override
@@ -106,10 +108,12 @@ class ProductCard extends StatelessWidget {
             ),
             SizedBox(height: 6),
 
-            IconButton(
-              icon: Icon(Icons.add_shopping_cart_outlined),
-              onPressed: onAdd,
-            ),
+            if (showCartIcon)
+              IconButton(
+                icon: Icon(Icons.add_shopping_cart_outlined),
+                onPressed: onAdd,
+              ),
+
           ],
         ),
       ),
