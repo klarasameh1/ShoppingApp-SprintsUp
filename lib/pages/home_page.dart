@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/pages/shopping_cart.dart';
 import '../widgets/product_card.dart';
 import '../widgets/offer_tile.dart';
+import '../models/product.dart';
+import '../models/cart_item.dart';
+
+final List<CartItem> cartList = [];
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -9,23 +13,6 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
-class Product {
-  final String title;
-  final String imageUrl;
-  final double price;
-
-  Product({required this.title, required this.imageUrl, required this.price});
-}
-
-class CartItem {
-  Product product;
-  int quantity;
-
-  CartItem({required this.product, this.quantity = 1});
-}
-
-final List<CartItem> cartList = [];
 
 class _HomePageState extends State<HomePage> {
   final List<Product> products = [
