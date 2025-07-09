@@ -26,7 +26,7 @@
 
 | Added Product | Cart Page|
 |-----|-----------------|
-| ![](ScreenShots/7addedProduct.png) | ![](ScreenShots/8CartPage) | 
+| ![](ScreenShots/7addedProduct.png) | ![](ScreenShots/8CartPage.png) | 
 
 
 ---
