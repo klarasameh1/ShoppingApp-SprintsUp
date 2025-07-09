@@ -1,6 +1,6 @@
-# 🛍️ ShoppingApp-SprintsUp
+# 🛍️ ShoppingApp
 
-A simple Flutter shopping app built as a final project for Sprints.  
+A simple Flutter shopping app built as a final project for Sprints program then continued improving it .
 Browse products, view hot offers, and manage your shopping cart easily.
 
 ---
