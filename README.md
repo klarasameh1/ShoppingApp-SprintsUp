@@ -18,7 +18,7 @@ Browse products, view hot offers, and manage your shopping cart easily.
 
 | Welcome Page | signing in| home page |
 |-----|-----------------|-----|
-| ![](ScreenShots/Screenshot1.png) | (ScreenShots/Screenshot2.png) |  (ScreenShots/Screenshot7.png) |
+| ![](ScreenShots/Screenshot1.png) | ![](ScreenShots/Screenshot2.png) | ![](ScreenShots/Screenshot7.png) |
 
 > see other screenshots inside the `screenshots/` folder._
 
