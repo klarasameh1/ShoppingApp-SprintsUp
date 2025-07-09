@@ -18,11 +18,11 @@
 
 | Welcome Page | Signing in| Signing up | Logged in |
 |-----|-----------------|-----|-----|
-| ![](ScreenShots/1homePage.png) | ![](ScreenShots/2login.png) | ![](ScreenShots/3signUp.png) | ![](ScreenShots/4loggedIn.png) |
+| ![](ScreenShots/1welcomePage.png) | ![](ScreenShots/2login.png) | ![](ScreenShots/3signUp.png) | ![](ScreenShots/4loggedIn.png) |
 
 | Home Page | Drawer options|
 |-----|-----------------|
-| ![](ScreenShots/5homePage.png) | ![](ScreenShots/6Drawer.png) | ![](ScreenShots/3signUp.png) |
+| ![](ScreenShots/5homePage.png) | ![](ScreenShots/6Drawer.png) | 
 
 | Added Product | Cart Page|
 |-----|-----------------|
