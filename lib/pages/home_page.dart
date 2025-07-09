@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
 class Product {
   final String title;
   final String imageUrl;
@@ -23,24 +24,36 @@ class CartItem {
 
   CartItem({required this.product, this.quantity = 1});
 }
+
 final List<CartItem> cartList = [];
 
 class _HomePageState extends State<HomePage> {
   final List<Product> products = [
-    Product(title: 'Lavender Face Bundle',
-        imageUrl: 'assets/Products/product2.png',
-        price: 300),
-    Product(title: 'Eva Body Mist',
-        imageUrl: 'assets/Products/product3.jpg',
-        price: 100),
-    Product(title: 'Hyaluronic Acid Serum',
-        imageUrl: 'assets/Products/product4.jpg',
-        price: 120),
-    Product(title: 'Hyaluronic Acid Bundle',
-        imageUrl: 'assets/Products/product5.jpg',
-        price: 100),
     Product(
-        title: 'Tonner', imageUrl: 'assets/Products/product6.jpg', price: 100),
+      title: 'Lavender Face Bundle',
+      imageUrl: 'assets/Products/product2.png',
+      price: 300,
+    ),
+    Product(
+      title: 'Eva Body Mist',
+      imageUrl: 'assets/Products/product3.jpg',
+      price: 100,
+    ),
+    Product(
+      title: 'Hyaluronic Acid Serum',
+      imageUrl: 'assets/Products/product4.jpg',
+      price: 120,
+    ),
+    Product(
+      title: 'Hyaluronic Acid Bundle',
+      imageUrl: 'assets/Products/product5.jpg',
+      price: 100,
+    ),
+    Product(
+      title: 'Tonner',
+      imageUrl: 'assets/Products/product6.jpg',
+      price: 100,
+    ),
   ];
 
   final List<String> offers = [
@@ -63,10 +76,7 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Container(
         color: Colors.grey.shade100,
-        width: MediaQuery
-            .of(context)
-            .size
-            .width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.6,
         child: ListView(
           children: [
             SizedBox(height: 60),
@@ -86,9 +96,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => ShoppingCart(),
-                    ),
+                    MaterialPageRoute(builder: (context) => ShoppingCart()),
                   );
                 });
               },
@@ -205,18 +213,21 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-
             Center(
               child: SizedBox(
                 child: Column(
                   children: [
-                    Icon(Icons.circle_sharp, size: 10,
-                      color: Colors.grey.shade700,),
-                    SizedBox(height: 10,),
-                    Text("Stay tuned for More",
+                    Icon(
+                      Icons.circle_sharp,
+                      size: 10,
+                      color: Colors.grey.shade700,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Stay tuned for More",
                       style: TextStyle(
-                          fontWeight: FontWeight.w200,
-                          fontSize: 18
+                        fontWeight: FontWeight.w200,
+                        fontSize: 18,
                       ),
                     ),
                   ],
@@ -227,12 +238,22 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ShoppingCart()),
+          );
+        },
+        child: Icon(cartList.isEmpty ?Icons.shopping_cart_outlined : Icons.shopping_cart) // optional: give it a nice icon
+      ),
     );
   }
 
   void addToCart(Product product) {
-    final index = cartList.indexWhere((item) =>
-    item.product.title == product.title);
+    final index = cartList.indexWhere(
+      (item) => item.product.title == product.title,
+    );
     setState(() {
       if (index != -1) {
         //Just increase quantity
