@@ -6,10 +6,10 @@ import '../models/product.dart';
 import '../models/cart_item.dart';
 
 final List<CartItem> cartList = [];
+bool showContacts = false;
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -23,7 +23,6 @@ class _HomePageState extends State<HomePage> {
     Product(title: 'Tonner', imageUrl: 'assets/Products/product6.jpg', price: 150),
   ];
 
-
   final List<String> offers = [
     "🎁 Promo Code: SHOPY25",
     "🚚 Free Shipping",
@@ -32,7 +31,6 @@ class _HomePageState extends State<HomePage> {
     "💳 Cashback Deal",
   ];
 
-  bool showContacts = false;
 
   @override
   Widget build(BuildContext context) {
