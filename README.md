@@ -1,16 +1,40 @@
-# 🛍️ Shoppy App - Flutter
+# 🛍️ ShoppingApp-SprintsUp
 
-A simple shopping UI app built using Flutter, designed as a course final project.
+A simple Flutter shopping app built as a final project for Sprints.  
+Browse products, view hot offers, and manage your shopping cart easily.
 
 ---
 
-## 📱 Features
+## ✨ Features
+- ✅ Browse popular products
+- ✅ Hot offers slider
+- ✅ Add/remove products to cart
+- ✅ Cart page with quantity control and total price calculation
+- ✅ Simple product detail dialog on tap
 
-- 🔐 Sign Up / Sign In pages with validation
-- 🖼️ Welcome screen with image and buttons
-- 🛍️ Product GridView with Add to Cart buttons
-- 🧾 SnackBars and Dialogs
-- 🔁 Page transitions with fade effect " not yet "
-- 🌍 Arabic & English localization " not yet "
-- 🎨 Responsive and clean UI
- ---
+---
+
+## 📸 Screenshots
+
+| Welcome Page | signing in| home page |
+|-----|-----------------|-----|
+| ![](ScreenShots/Screenshot1.png) | (ScreenShots/Screenshot2.png) |  (ScreenShots/Screenshot7.png) |
+
+> see other screenshots inside the `screenshots/` folder._
+
+---
+
+## 📦 Installation & Run
+
+```bash
+# Clone the repository
+git clone https://github.com/klarasameh1/ShoppingApp-SprintsUp.git
+
+# Navigate into the project directory
+cd ShoppingApp-SprintsUp
+
+# Get dependencies
+flutter pub get
+
+# Run the app
+flutter run
