@@ -29,32 +29,13 @@ final List<CartItem> cartList = [];
 
 class _HomePageState extends State<HomePage> {
   final List<Product> products = [
-    Product(
-      title: 'Lavender Face Bundle',
-      imageUrl: 'assets/Products/product2.png',
-      price: 300,
-    ),
-    Product(
-      title: 'Eva Body Mist',
-      imageUrl: 'assets/Products/product3.jpg',
-      price: 100,
-    ),
-    Product(
-      title: 'Hyaluronic Acid Serum',
-      imageUrl: 'assets/Products/product4.jpg',
-      price: 120,
-    ),
-    Product(
-      title: 'Hyaluronic Acid Bundle',
-      imageUrl: 'assets/Products/product5.jpg',
-      price: 100,
-    ),
-    Product(
-      title: 'Tonner',
-      imageUrl: 'assets/Products/product6.jpg',
-      price: 100,
-    ),
+    Product(title: 'Lavender Face Bundle', imageUrl: 'assets/Products/product2.png', price: 300),
+    Product(title: 'Eva Body Mist', imageUrl: 'assets/Products/product3.jpg', price: 150),
+    Product(title: 'Hyaluronic Acid Serum', imageUrl: 'assets/Products/product4.jpg', price: 175),
+    Product(title: 'Hyaluronic Acid Bundle', imageUrl: 'assets/Products/product5.jpg', price: 300),
+    Product(title: 'Tonner', imageUrl: 'assets/Products/product6.jpg', price: 150),
   ];
+
 
   final List<String> offers = [
     "🎁 Promo Code: SHOPY25",
@@ -245,7 +226,9 @@ class _HomePageState extends State<HomePage> {
             MaterialPageRoute(builder: (context) => ShoppingCart()),
           );
         },
-        child: Icon(cartList.isEmpty ?Icons.shopping_cart_outlined : Icons.shopping_cart) // optional: give it a nice icon
+        child: Icon(
+          cartList.isEmpty ? Icons.shopping_cart_outlined : Icons.shopping_cart,
+        ), // optional: give it a nice icon
       ),
     );
   }
