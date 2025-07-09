@@ -1,7 +1,7 @@
 # 🛍️ ShoppingApp
 
-A simple Flutter shopping app built as a final project for Sprints program then continued improving it .
-Browse products, view hot offers, and manage your shopping cart easily.
+- A simple Flutter shopping app built as a final project for Sprints program then continued improving it .
+- Browse products, view hot offers, and manage your shopping cart easily.
 
 ---
 
@@ -16,13 +16,21 @@ Browse products, view hot offers, and manage your shopping cart easily.
 
 ## 📸 Screenshots
 
-| Welcome Page | signing in| home page |
-|-----|-----------------|-----|
-| ![](ScreenShots/Screenshot1.png) | ![](ScreenShots/Screenshot2.png) | ![](ScreenShots/Screenshot7.png) |
+| Welcome Page | Signing in| Signing up | Logged in |
+|-----|-----------------|-----|-----|
+| ![](ScreenShots/1homePage.png) | ![](ScreenShots/2login.png) | ![](ScreenShots/3signUp.png) | ![](ScreenShots/4loggedIn.png) |
 
-> see other screenshots inside the `screenshots/` folder._
+| Home Page | Drawer options|
+|-----|-----------------|
+| ![](ScreenShots/5homePage.png) | ![](ScreenShots/6Drawer.png) | ![](ScreenShots/3signUp.png) |
+
+| Added Product | Cart Page|
+|-----|-----------------|
+| ![](ScreenShots/7addedProduct.png) | ![](ScreenShots/8CartPage) | 
+
 
 ---
+
 
 ## 📦 Installation & Run
 
