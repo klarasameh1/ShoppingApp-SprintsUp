@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "To Do App",
         theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
           focusColor: Colors.black,
           fontFamily: 'Caprasimo-Regular',
         ),
