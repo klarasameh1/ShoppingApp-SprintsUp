@@ -58,7 +58,7 @@ class _SigninPageState extends State<SigninPage> {
                   child: TextFormField(
                     validator: (value) {
                       if (value != null && value.length < 6) {
-                        return 'Password must contain 6 characters';
+                        return 'Invalid Password';
                       }
                       return null;
                     },
