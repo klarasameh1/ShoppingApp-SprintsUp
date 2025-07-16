@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/pages/shopping_cart.dart';
+import 'package:shopping_app/pages/signin_page.dart';
+import 'package:shopping_app/pages/welcome_page.dart';
 import '../widgets/product_card.dart';
 import '../widgets/offer_tile.dart';
 import '../models/product.dart';
@@ -98,9 +100,12 @@ class _HomePageState extends State<HomePage> {
 
             ListTile(
               onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
+                Navigator.of(context).pop(); // close drawer
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => WelcomePage()),
+                      (route) => false,
+                );
+
               },
               title: Text("Log Out"),
               trailing: Icon(Icons.logout),
